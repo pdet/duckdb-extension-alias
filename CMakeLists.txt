@@ -7,6 +7,11 @@ option(DUCKDB_WASM_EXTENSIONS "Whether compiling for Wasm target" OFF)
 if(NOT DEFINED EXTENSION_NAME)
     message(FATAL_ERROR "DuckDB extension name is required")
 endif()
+set(EXTENSION_WRAPPER_NAME $ENV{EXTENSION_WRAPPER_NAME})
+
+if(NOT DEFINED EXTENSION_WRAPPER_NAME)
+    message(FATAL_ERROR "DuckDB extension wrapper name is required")
+endif()
 if (DEFINED TARGET_DUCKDB_VERSION_MAJOR)
     add_definitions(-DDUCKDB_EXTENSION_API_VERSION_MAJOR=${TARGET_DUCKDB_VERSION_MAJOR})
 endif()
@@ -18,6 +23,8 @@ if (DEFINED TARGET_DUCKDB_VERSION_PATCH)
 endif()
 
 add_definitions(-DDUCKDB_EXTENSION_NAME=${EXTENSION_NAME})
+add_definitions(-DDUCKDB_EXTENSION_WRAPPER_NAME=${EXTENSION_WRAPPER_NAME})
+
 
 if (DEFINED DUCKDB_EXTENSION_API_VERSION_UNSTABLE)
     add_definitions(-DDUCKDB_EXTENSION_API_VERSION_UNSTABLE=${DUCKDB_EXTENSION_API_VERSION_UNSTABLE})
@@ -30,8 +37,7 @@ project(${EXTENSION_NAME} LANGUAGES C)
 
 # Create Extension library
 set(EXTENSION_SOURCES
-        src/add_numbers.c
-        src/capi_quack.c
+        src/extension_alias.c
 )
 
 if (DUCKDB_WASM_EXTENSION)

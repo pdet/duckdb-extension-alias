@@ -18,5 +18,9 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: capi_quack
+      extension_name: extension_alias
       extra_toolchains: python3
+    env:
+      RUN_TEST: 1
+      EXTENSION_NAME: "arrow"
+      EXTENSION_WRAPPER_NAME: "nanoarrow"

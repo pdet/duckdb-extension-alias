@@ -1,0 +1,18 @@
+# name: test/sql/extension_alias.test
+# description: test extension_alias extension
+# group: [extension_alias]
+
+# Before we load the extension, this will fail
+statement error
+SELECT nanoarrow_version();
+----
+Catalog Error: Scalar Function with name nanoarrow_version does not exist!
+
+# Require statement will ensure the extension is loaded from now on
+require-env RUN_TEST
+
+require extension_alias
+
+# Confirm the extension works
+statement ok
+SELECT nanoarrow_version();
