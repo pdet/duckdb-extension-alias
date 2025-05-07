@@ -23,6 +23,6 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: extension_alias
+      extension_name: ${{ env.EXTENSION_NAME }}
       extra_toolchains: python3
-
+      extension_wrapper_name: ${{ env.EXTENSION_WRAPPER_NAME }}
