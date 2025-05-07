@@ -13,8 +13,6 @@ concurrency:
 
 env:
   RUN_TEST: 1
-  EXTENSION_NAME: "arrow"
-  EXTENSION_WRAPPER_NAME: "nanoarrow"
   
 jobs:
   duckdb-build:
@@ -23,6 +21,6 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: ${{ env.EXTENSION_NAME }}
+      extension_name: "arrow"
       extra_toolchains: python3
-      extension_wrapper_name: ${{ env.EXTENSION_WRAPPER_NAME }}
+      extension_wrapper_name: "nanoarrow"
