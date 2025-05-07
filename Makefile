@@ -4,7 +4,7 @@ PROJ_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
 # Main extension configuration
 EXTENSION_NAME ?= extension_alias
-EXTENSION_WRAPPER_NAME ?= nanoarrow
+EXTENSION_CANONICAL ?= nanoarrow
 
 # Set to 1 to enable Unstable API (binaries will only work on TARGET_DUCKDB_VERSION, forwards compatibility will be broken)
 # WARNING: When set to 1, the duckdb_extension.h from the TARGET_DUCKDB_VERSION must be used, using any other version of

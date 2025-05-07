@@ -21,6 +21,7 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: "arrow"
+      extension_name: extension_alias
+      extension_canonical: nanoarrow
       extra_toolchains: python3
-      extension_wrapper_name: "nanoarrow"
+
