@@ -11,13 +11,13 @@ on:
         description: 'The name with which the extension will be built'
         required: false
         type: string
-        default: extension_alias
+        default: "extension_alias"
 
       extension_canonical:
         description: 'If this is an alias extension, the name of the canonical extension'
         required: false
         type: string
-        default: nanoarrow
+        default: "nanoarrow"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || '' }}-${{ github.base_ref || '' }}-${{ github.ref != 'refs/heads/main' || github.sha }}
