@@ -33,7 +33,7 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: ${{inputs.extension_name }}
-      extension_canonical: ${{inputs.extension_name }}
+      extension_name: ${{github.event.inputs.extension_name }}
+      extension_canonical: ${{github.event.inputs.extension_canonical }}
       extra_toolchains: python3
 
