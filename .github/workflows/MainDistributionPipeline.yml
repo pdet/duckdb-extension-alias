@@ -6,6 +6,18 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      extension_name:
+        description: 'The name with which the extension will be built'
+        required: false
+        type: string
+        default: extension_alias
+
+      extension_canonical:
+        description: 'If this is an alias extension, the name of the canonical extension'
+        required: false
+        type: string
+        default: nanoarrow
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}-${{ github.head_ref || '' }}-${{ github.base_ref || '' }}-${{ github.ref != 'refs/heads/main' || github.sha }}
@@ -21,7 +33,7 @@ jobs:
     with:
       duckdb_version: v1.2.2
       ci_tools_version: v1.2.2
-      extension_name: extension_alias
-      extension_canonical: nanoarrow
+      extension_name: ${{inputs.extension_name }}
+      extension_canonical: ${{inputs.extension_name }}
       extra_toolchains: python3
 
