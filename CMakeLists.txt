@@ -4,7 +4,7 @@ option(DUCKDB_WASM_EXTENSIONS "Whether compiling for Wasm target" OFF)
 ###
 # Configuration
 ###
-if(NOT DEFINED EXTENSION_NAME)
+if(NOT DEFINED EXTENSION_NAME OR EXTENSION_NAME STREQUAL "")
     message(FATAL_ERROR "DuckDB extension name is required")
 endif()
 
