@@ -926,7 +926,7 @@ Returns `NULL` if the column is out of range.
 DUCKDB_API duckdb_logical_type duckdb_column_logical_type(duckdb_result *result, idx_t col);
 
 /*!
-Returns the number of columns present in a the result object.
+Returns the number of columns present in the result object.
 
 * @param result The result object.
 * @return The number of columns present in the result object.
