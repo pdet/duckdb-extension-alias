@@ -865,7 +865,7 @@ If the query fails to execute, DuckDBError is returned and the error message can
 `duckdb_result_error`.
 
 Note that after running `duckdb_query`, `duckdb_destroy_result` must be called on the result object even if the
-query fails, otherwise the error stored within the result will not be freed correctly.
+query fails; otherwise, the error stored within the result will not be freed correctly.
 
 * @param connection The connection to perform the query in.
 * @param query The SQL query to run.
@@ -2476,7 +2476,7 @@ DUCKDB_API duckdb_value duckdb_get_map_value(duckdb_value value, idx_t index);
 Returns whether the value's type is SQLNULL or not.
 
 * @param value The value to check.
-* @return True, if the value's type is SQLNULL, otherwise false.
+* @return True, if the value's type is SQLNULL; otherwise, false.
 */
 DUCKDB_API bool duckdb_is_null_value(duckdb_value value);
 
@@ -4147,7 +4147,7 @@ If the query fails to execute, DuckDBError is returned and the error message can
 `duckdb_query_arrow_error`.
 
 Note that after running `duckdb_query_arrow`, `duckdb_destroy_arrow` must be called on the result object even if the
-query fails, otherwise the error stored within the result will not be freed correctly.
+query fails; otherwise, the error stored within the result will not be freed correctly.
 
 * @param connection The connection to perform the query in.
 * @param query The SQL query to run.
