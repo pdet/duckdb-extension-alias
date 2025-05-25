@@ -1341,7 +1341,7 @@ DUCKDB_API duckdb_date duckdb_to_date(duckdb_date_struct date);
 Test a `duckdb_date` to see if it is a finite value.
 
 * @param date The date object, as obtained from a `DUCKDB_TYPE_DATE` column.
-* @return True if the date is finite, false if it is ±infinity.
+* @return true if the date is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_date(duckdb_date date);
 
@@ -1399,7 +1399,7 @@ DUCKDB_API duckdb_timestamp duckdb_to_timestamp(duckdb_timestamp_struct ts);
 Test a `duckdb_timestamp` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp object, as obtained from a `DUCKDB_TYPE_TIMESTAMP` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp(duckdb_timestamp ts);
 
@@ -1407,7 +1407,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp(duckdb_timestamp ts);
 Test a `duckdb_timestamp_s` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_s object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_S` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_s(duckdb_timestamp_s ts);
 
@@ -1415,7 +1415,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp_s(duckdb_timestamp_s ts);
 Test a `duckdb_timestamp_ms` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_ms object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_MS` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_ms(duckdb_timestamp_ms ts);
 
@@ -1423,7 +1423,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp_ms(duckdb_timestamp_ms ts);
 Test a `duckdb_timestamp_ns` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_ns object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_NS` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_ns(duckdb_timestamp_ns ts);
 
@@ -2476,7 +2476,7 @@ DUCKDB_API duckdb_value duckdb_get_map_value(duckdb_value value, idx_t index);
 Returns whether the value's type is SQLNULL or not.
 
 * @param value The value to check.
-* @return True, if the value's type is SQLNULL; otherwise, false.
+* @return true, if the value's type is SQLNULL; otherwise, false.
 */
 DUCKDB_API bool duckdb_is_null_value(duckdb_value value);
 
