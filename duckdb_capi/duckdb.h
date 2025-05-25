@@ -865,7 +865,7 @@ If the query fails to execute, DuckDBError is returned and the error message can
 `duckdb_result_error`.
 
 Note that after running `duckdb_query`, `duckdb_destroy_result` must be called on the result object even if the
-query fails, otherwise the error stored within the result will not be freed correctly.
+query fails; otherwise, the error stored within the result will not be freed correctly.
 
 * @param connection The connection to perform the query in.
 * @param query The SQL query to run.
@@ -926,7 +926,7 @@ Returns `NULL` if the column is out of range.
 DUCKDB_API duckdb_logical_type duckdb_column_logical_type(duckdb_result *result, idx_t col);
 
 /*!
-Returns the number of columns present in a the result object.
+Returns the number of columns present in the result object.
 
 * @param result The result object.
 * @return The number of columns present in the result object.
@@ -1341,7 +1341,7 @@ DUCKDB_API duckdb_date duckdb_to_date(duckdb_date_struct date);
 Test a `duckdb_date` to see if it is a finite value.
 
 * @param date The date object, as obtained from a `DUCKDB_TYPE_DATE` column.
-* @return True if the date is finite, false if it is ±infinity.
+* @return true if the date is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_date(duckdb_date date);
 
@@ -1399,7 +1399,7 @@ DUCKDB_API duckdb_timestamp duckdb_to_timestamp(duckdb_timestamp_struct ts);
 Test a `duckdb_timestamp` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp object, as obtained from a `DUCKDB_TYPE_TIMESTAMP` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp(duckdb_timestamp ts);
 
@@ -1407,7 +1407,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp(duckdb_timestamp ts);
 Test a `duckdb_timestamp_s` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_s object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_S` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_s(duckdb_timestamp_s ts);
 
@@ -1415,7 +1415,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp_s(duckdb_timestamp_s ts);
 Test a `duckdb_timestamp_ms` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_ms object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_MS` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_ms(duckdb_timestamp_ms ts);
 
@@ -1423,7 +1423,7 @@ DUCKDB_API bool duckdb_is_finite_timestamp_ms(duckdb_timestamp_ms ts);
 Test a `duckdb_timestamp_ns` to see if it is a finite value.
 
 * @param ts The duckdb_timestamp_ns object, as obtained from a `DUCKDB_TYPE_TIMESTAMP_NS` column.
-* @return True if the timestamp is finite, false if it is ±infinity.
+* @return true if the timestamp is finite, false if it is ±infinity.
 */
 DUCKDB_API bool duckdb_is_finite_timestamp_ns(duckdb_timestamp_ns ts);
 
@@ -1644,7 +1644,7 @@ DUCKDB_API duckdb_state duckdb_bind_hugeint(duckdb_prepared_statement prepared_s
                                             duckdb_hugeint val);
 
 /*!
-Binds an duckdb_uhugeint value to the prepared statement at the specified index.
+Binds a duckdb_uhugeint value to the prepared statement at the specified index.
 */
 DUCKDB_API duckdb_state duckdb_bind_uhugeint(duckdb_prepared_statement prepared_statement, idx_t param_idx,
                                              duckdb_uhugeint val);
@@ -2476,7 +2476,7 @@ DUCKDB_API duckdb_value duckdb_get_map_value(duckdb_value value, idx_t index);
 Returns whether the value's type is SQLNULL or not.
 
 * @param value The value to check.
-* @return True, if the value's type is SQLNULL, otherwise false.
+* @return true, if the value's type is SQLNULL; otherwise, false.
 */
 DUCKDB_API bool duckdb_is_null_value(duckdb_value value);
 
@@ -2828,7 +2828,7 @@ DUCKDB_API duckdb_state duckdb_register_logical_type(duckdb_connection con, duck
 Creates an empty data chunk with the specified column types.
 The result must be destroyed with `duckdb_destroy_data_chunk`.
 
-* @param types An array of column types. Column types can not contain ANY and INVALID types.
+* @param types An array of column types. Column types cannot contain ANY and INVALID types.
 * @param column_count The number of columns.
 * @return The data chunk.
 */
@@ -4147,7 +4147,7 @@ If the query fails to execute, DuckDBError is returned and the error message can
 `duckdb_query_arrow_error`.
 
 Note that after running `duckdb_query_arrow`, `duckdb_destroy_arrow` must be called on the result object even if the
-query fails, otherwise the error stored within the result will not be freed correctly.
+query fails; otherwise, the error stored within the result will not be freed correctly.
 
 * @param connection The connection to perform the query in.
 * @param query The SQL query to run.
